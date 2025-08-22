@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Web innovation — Compétences</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+	<div class="app">
+		<aside class="sidebar" aria-label="Navigation latérale">
+			<div class="sidebar-header">
+				<label class="avatar-upload" title="Changer l'image de l'admin">
+					<input type="file" id="avatarInput" accept="image/*" hidden />
+					<div class="avatar admin-avatar" id="adminAvatar"><span>ADM</span></div>
+				</label>
+				<div class="admin-meta">
+					<strong>Admin</strong>
+					<button id="resetAvatar" class="link" type="button">Réinitialiser</button>
+				</div>
+			</div>
+			<nav class="sidebar-nav">
+				<a href="index.html" data-nav="home" class="nav-btn">Accueil</a>
+				<a href="equipe.html" data-nav="equipe" class="nav-btn">Équipe</a>
+				<a href="projets.html" data-nav="projets" class="nav-btn">Projets</a>
+				<a href="competences.html" data-nav="competences" class="nav-btn is-active">Compétences</a>
+				<a href="contact.html" data-nav="contact" class="nav-btn">Contact</a>
+			</nav>
+			<div class="sidebar-footer">
+				<button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème"><span class="sun">☀️</span><span class="moon">🌙</span></button>
+				<button id="sidebarToggle" class="sidebar-toggle" aria-label="Ouvrir/fermer la barre">☰</button>
+			</div>
+		</aside>
+
+		<main class="content">
+			<section class="section skills" aria-label="Compétences & Technologies" data-reveal>
+				<div class="container">
+					<header class="section-head">
+						<h1 class="hero-title">Web innovation</h1>
+						<h2>Compétences & Tech</h2>
+						<p>Un stack moderne pour livrer vite, propre, et qui scale.</p>
+					</header>
+					<ul class="chip-list" aria-label="Technologies">
+						<li class="chip">HTML5</li>
+						<li class="chip">CSS3</li>
+						<li class="chip">JavaScript</li>
+						<li class="chip">Figma</li>
+						<li class="chip">Node.js</li>
+						<li class="chip">Python</li>
+						<li class="chip">SQL</li>
+						<li class="chip">Git & CI</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+	</div>
+	<div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modalTitle">
+		<div class="modal-backdrop" data-close></div>
+		<div class="modal-dialog" role="document">
+			<button class="modal-close" data-close aria-label="Fermer">✕</button>
+			<div class="modal-media" id="modalMedia" aria-hidden="true"></div>
+			<div class="modal-body">
+				<h3 id="modalTitle">Titre du projet</h3>
+				<p id="modalDescription">Description du projet…</p>
+				<div class="modal-actions">
+					<a id="modalPrimary" class="btn btn-primary" href="#" target="_blank" rel="noopener">Voir le projet</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+	<script src="./script.js" defer></script>
+</body>
+</html>

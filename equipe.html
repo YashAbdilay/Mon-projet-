@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Web innovation — Équipe</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+	<div class="app">
+		<aside class="sidebar" aria-label="Navigation latérale">
+			<div class="sidebar-header">
+				<label class="avatar-upload" title="Changer l'image de l'admin">
+					<input type="file" id="avatarInput" accept="image/*" hidden />
+					<div class="avatar admin-avatar" id="adminAvatar"><span>ADM</span></div>
+				</label>
+				<div class="admin-meta">
+					<strong>Admin</strong>
+					<button id="resetAvatar" class="link" type="button">Réinitialiser</button>
+				</div>
+			</div>
+			<nav class="sidebar-nav">
+				<a href="index.html" data-nav="home" class="nav-btn">Accueil</a>
+				<a href="equipe.html" data-nav="equipe" class="nav-btn is-active">Équipe</a>
+				<a href="projets.html" data-nav="projets" class="nav-btn">Projets</a>
+				<a href="competences.html" data-nav="competences" class="nav-btn">Compétences</a>
+				<a href="contact.html" data-nav="contact" class="nav-btn">Contact</a>
+			</nav>
+			<div class="sidebar-footer">
+				<button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème"><span class="sun">☀️</span><span class="moon">🌙</span></button>
+				<button id="sidebarToggle" class="sidebar-toggle" aria-label="Ouvrir/fermer la barre">☰</button>
+			</div>
+		</aside>
+
+		<main class="content">
+			<section class="section team" aria-label="Notre équipe" data-reveal>
+				<div class="container">
+					<header class="section-head">
+						<h1 class="hero-title">Web innovation</h1>
+						<h2>Notre équipe</h2>
+						<p>Cinq profils complémentaires pour couvrir design, front, back, data et gestion.</p>
+					</header>
+
+					<div class="team-grid">
+						<article class="member-card">
+							<div class="avatar" aria-hidden="true"><span>AM</span></div>
+							<h3 class="member-name">Alex Martin</h3>
+							<p class="member-role">Développeur Front‑End</p>
+							<p class="member-bio">Spécialiste en interfaces rapides et accessibles. Passionné par l'animation et l'UX.</p>
+							<div class="member-links">
+								<a href="#" aria-label="GitHub Alex">GitHub</a>
+								<a href="#" aria-label="LinkedIn Alex">LinkedIn</a>
+							</div>
+						</article>
+
+						<article class="member-card">
+							<div class="avatar" aria-hidden="true"><span>BE</span></div>
+							<h3 class="member-name">Basma El Fassi</h3>
+							<p class="member-role">UX/UI Designer</p>
+							<p class="member-bio">Conçoit des parcours clairs, inclusifs et esthétiques. Défend le design systémique.</p>
+							<div class="member-links">
+								<a href="#" aria-label="Portfolio Basma">Portfolio</a>
+								<a href="#" aria-label="Dribbble Basma">Dribbble</a>
+							</div>
+						</article>
+
+						<article class="member-card">
+							<div class="avatar" aria-hidden="true"><span>CL</span></div>
+							<h3 class="member-name">Chen Liu</h3>
+							<p class="member-role">Ingénieur Data</p>
+							<p class="member-bio">Transforme la donnée en insights actionnables. Modélisation, pipelines, visualisation.</p>
+							<div class="member-links">
+								<a href="#" aria-label="GitHub Chen">GitHub</a>
+								<a href="#" aria-label="Kaggle Chen">Kaggle</a>
+							</div>
+						</article>
+
+						<article class="member-card">
+							<div class="avatar" aria-hidden="true"><span>DF</span></div>
+							<h3 class="member-name">Diego Fernández</h3>
+							<p class="member-role">Développeur Back‑End</p>
+							<p class="member-bio">Conçoit des APIs fiables et sécurisées. DevOps, CI/CD et performance serveur.</p>
+							<div class="member-links">
+								<a href="#" aria-label="GitHub Diego">GitHub</a>
+								<a href="#" aria-label="LinkedIn Diego">LinkedIn</a>
+							</div>
+						</article>
+
+						<article class="member-card">
+							<div class="avatar" aria-hidden="true"><span>ÉD</span></div>
+							<h3 class="member-name">Éva Dupont</h3>
+							<p class="member-role">Cheffe de projet</p>
+							<p class="member-bio">Coordonne, cadences, garantit la qualité. Focus sur l'impact et la clarté.</p>
+							<div class="member-links">
+								<a href="#" aria-label="LinkedIn Éva">LinkedIn</a>
+								<a href="#" aria-label="Email Éva">Email</a>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+	<div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modalTitle">
+		<div class="modal-backdrop" data-close></div>
+		<div class="modal-dialog" role="document">
+			<button class="modal-close" data-close aria-label="Fermer">✕</button>
+			<div class="modal-media" id="modalMedia" aria-hidden="true"></div>
+			<div class="modal-body">
+				<h3 id="modalTitle">Titre du projet</h3>
+				<p id="modalDescription">Description du projet…</p>
+				<div class="modal-actions">
+					<a id="modalPrimary" class="btn btn-primary" href="#" target="_blank" rel="noopener">Voir le projet</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+	<script src="./script.js" defer></script>
+</body>
+</html>

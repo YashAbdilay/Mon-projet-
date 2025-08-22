@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Web innovation — Portfolio du groupe</title>
-	<meta name="description" content="Portfolio professionnel et responsive d'un groupe de 5 étudiants — Web innovation." />
+	<title>Web innovation — Accueil</title>
+	<meta name="description" content="Portfolio professionnel d'un groupe de 5 étudiants — Web innovation." />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -12,260 +12,63 @@
 	<link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-	<header class="site-header" data-reveal>
-		<div class="container header-inner">
-			<a href="#hero" class="brand">
-				<span class="brand-mark" aria-hidden="true">WI</span>
-				<span class="brand-text">Web Innovation</span>
-			</a>
-			<nav class="nav">
-				<a href="#equipe">Équipe</a>
-				<a href="#projets">Projets</a>
-				<a href="#competences">Compétences</a>
-				<a href="#contact">Contact</a>
-				<button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème">
-					<span class="sun">☀️</span>
-					<span class="moon">🌙</span>
-				</button>
+	<div class="app">
+		<aside class="sidebar" aria-label="Navigation latérale">
+			<div class="sidebar-header">
+				<label class="avatar-upload" title="Changer l'image de l'admin">
+					<input type="file" id="avatarInput" accept="image/*" hidden />
+					<div class="avatar admin-avatar" id="adminAvatar"><span>ADM</span></div>
+				</label>
+				<div class="admin-meta">
+					<strong>Admin</strong>
+					<button id="resetAvatar" class="link" type="button">Réinitialiser</button>
+				</div>
+			</div>
+			<nav class="sidebar-nav">
+				<a href="index.html" data-nav="home" class="nav-btn is-active">Accueil</a>
+				<a href="equipe.html" data-nav="equipe" class="nav-btn">Équipe</a>
+				<a href="projets.html" data-nav="projets" class="nav-btn">Projets</a>
+				<a href="competences.html" data-nav="competences" class="nav-btn">Compétences</a>
+				<a href="contact.html" data-nav="contact" class="nav-btn">Contact</a>
 			</nav>
-		</div>
-	</header>
+			<div class="sidebar-footer">
+				<button id="themeToggle" class="theme-toggle" aria-label="Basculer le thème"><span class="sun">☀️</span><span class="moon">🌙</span></button>
+				<button id="sidebarToggle" class="sidebar-toggle" aria-label="Ouvrir/fermer la barre">☰</button>
+			</div>
+		</aside>
 
-	<main>
-		<section id="hero" class="hero" aria-label="Section d'introduction" data-reveal>
-			<div class="container hero-inner">
-				<div class="hero-content">
-					<h1 class="hero-title">Web innovation</h1>
-					<p class="hero-subtitle">Un collectif de 5 étudiant·e·s qui conçoivent et bâtissent des expériences numériques ambitieuses.</p>
-					<div class="hero-cta">
-						<a href="#equipe" class="btn btn-primary">Découvrir l'équipe</a>
-						<a href="#projets" class="btn btn-ghost">Voir les projets</a>
+		<main class="content">
+			<section class="hero home-hero" aria-label="Accueil" data-reveal>
+				<div class="container hero-inner">
+					<div class="hero-content">
+						<h1 class="hero-title">Web innovation</h1>
+						<p class="hero-subtitle">Portfolio du groupe — découvrez nos projets, notre équipe et nos compétences.</p>
+						<div class="timer" aria-live="polite">
+							<span id="clock">00:00:00</span>
+						</div>
+						<div class="hero-cta">
+							<a href="projets.html" class="btn btn-primary">Voir les projets</a>
+							<a href="equipe.html" class="btn btn-ghost">Rencontrer l'équipe</a>
+						</div>
+					</div>
+					<div class="hero-art" aria-hidden="true">
+						<div class="blob b1"></div>
+						<div class="blob b2"></div>
+						<div class="grid-spark"></div>
 					</div>
 				</div>
-				<div class="hero-art" aria-hidden="true">
-					<div class="blob b1"></div>
-					<div class="blob b2"></div>
-					<div class="grid-spark"></div>
+			</section>
+
+			<section class="section" data-reveal>
+				<div class="container">
+					<header class="section-head">
+						<h2>À propos</h2>
+						<p>Nous concevons des expériences numériques ambitieuses et accessibles. Naviguez via la barre à gauche.</p>
+					</header>
 				</div>
-			</div>
-		</section>
-
-		<section id="equipe" class="section team" aria-label="Notre équipe" data-reveal>
-			<div class="container">
-				<header class="section-head">
-					<h2>Notre équipe</h2>
-					<p>Cinq profils complémentaires pour couvrir design, front, back, data et gestion.</p>
-				</header>
-
-				<div class="team-grid">
-					<article class="member-card">
-						<div class="avatar" aria-hidden="true"><span>AM</span></div>
-						<h3 class="member-name">Alex Martin</h3>
-						<p class="member-role">Développeur Front‑End</p>
-						<p class="member-bio">Spécialiste en interfaces rapides et accessibles. Passionné par l'animation et l'UX.</p>
-						<div class="member-links">
-							<a href="#" aria-label="GitHub Alex">GitHub</a>
-							<a href="#" aria-label="LinkedIn Alex">LinkedIn</a>
-						</div>
-					</article>
-
-					<article class="member-card">
-						<div class="avatar" aria-hidden="true"><span>BE</span></div>
-						<h3 class="member-name">Basma El Fassi</h3>
-						<p class="member-role">UX/UI Designer</p>
-						<p class="member-bio">Conçoit des parcours clairs, inclusifs et esthétiques. Défend le design systémique.</p>
-						<div class="member-links">
-							<a href="#" aria-label="Portfolio Basma">Portfolio</a>
-							<a href="#" aria-label="Dribbble Basma">Dribbble</a>
-						</div>
-					</article>
-
-					<article class="member-card">
-						<div class="avatar" aria-hidden="true"><span>CL</span></div>
-						<h3 class="member-name">Chen Liu</h3>
-						<p class="member-role">Ingénieur Data</p>
-						<p class="member-bio">Transforme la donnée en insights actionnables. Modélisation, pipelines, visualisation.</p>
-						<div class="member-links">
-							<a href="#" aria-label="GitHub Chen">GitHub</a>
-							<a href="#" aria-label="Kaggle Chen">Kaggle</a>
-						</div>
-					</article>
-
-					<article class="member-card">
-						<div class="avatar" aria-hidden="true"><span>DF</span></div>
-						<h3 class="member-name">Diego Fernández</h3>
-						<p class="member-role">Développeur Back‑End</p>
-						<p class="member-bio">Conçoit des APIs fiables et sécurisées. DevOps, CI/CD et performance serveur.</p>
-						<div class="member-links">
-							<a href="#" aria-label="GitHub Diego">GitHub</a>
-							<a href="#" aria-label="LinkedIn Diego">LinkedIn</a>
-						</div>
-					</article>
-
-					<article class="member-card">
-						<div class="avatar" aria-hidden="true"><span>ÉD</span></div>
-						<h3 class="member-name">Éva Dupont</h3>
-						<p class="member-role">Cheffe de projet</p>
-						<p class="member-bio">Coordonne, cadences, garantit la qualité. Focus sur l'impact et la clarté.</p>
-						<div class="member-links">
-							<a href="#" aria-label="LinkedIn Éva">LinkedIn</a>
-							<a href="#" aria-label="Email Éva">Email</a>
-						</div>
-					</article>
-				</div>
-			</div>
-		</section>
-
-		<section id="projets" class="section projects" aria-label="Nos projets" data-reveal>
-			<div class="container">
-				<header class="section-head">
-					<h2>Projets</h2>
-					<p>Du concept au déploiement: web, mobile, data et design.</p>
-					<div class="filters" role="tablist" aria-label="Filtrer les projets">
-						<button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Tous</button>
-						<button class="filter" data-filter="web" role="tab">Web</button>
-						<button class="filter" data-filter="mobile" role="tab">Mobile</button>
-						<button class="filter" data-filter="data" role="tab">Data</button>
-						<button class="filter" data-filter="design" role="tab">Design</button>
-					</div>
-				</header>
-
-				<div class="project-grid">
-					<article class="project-card" data-category="web" data-title="Site e‑commerce headless" data-description="Architecture headless avec CMS, recherche instantanée et paiement sécurisé." data-image="">
-						<div class="thumb t1" aria-hidden="true"></div>
-						<div class="project-meta">
-							<span class="tag">Web</span>
-							<h3>Site e‑commerce headless</h3>
-							<p>Headless + recherche instantanée + paiement</p>
-						</div>
-					</article>
-
-					<article class="project-card" data-category="mobile" data-title="App santé bien‑être" data-description="Suivi d'habitudes, notifications intelligentes, synchronisation cloud." data-image="">
-						<div class="thumb t2" aria-hidden="true"></div>
-						<div class="project-meta">
-							<span class="tag">Mobile</span>
-							<h3>App santé bien‑être</h3>
-							<p>Habitudes, rappels, synchronisation</p>
-						</div>
-					</article>
-
-					<article class="project-card" data-category="data" data-title="Tableau de bord data" data-description="Intégration ETL, modèles prédictifs, visualisations interactives." data-image="">
-						<div class="thumb t3" aria-hidden="true"></div>
-						<div class="project-meta">
-							<span class="tag">Data</span>
-							<h3>Tableau de bord data</h3>
-							<p>ETL + ML + viz interactive</p>
-						</div>
-					</article>
-
-					<article class="project-card" data-category="design" data-title="Système de design" data-description="Bibliothèque de composants, tokens, guidelines et accessibilité AA." data-image="">
-						<div class="thumb t4" aria-hidden="true"></div>
-						<div class="project-meta">
-							<span class="tag">Design</span>
-							<h3>Système de design</h3>
-							<p>Composants + tokens + a11y</p>
-						</div>
-					</article>
-
-					<article class="project-card" data-category="web" data-title="Plateforme éducative" data-description="Cours interactifs, quiz adaptatifs, scoring et analytics." data-image="">
-						<div class="thumb t5" aria-hidden="true"></div>
-						<div class="project-meta">
-							<span class="tag">Web</span>
-							<h3>Plateforme éducative</h3>
-							<p>Interactivité et analytics</p>
-						</div>
-					</article>
-
-					<article class="project-card" data-category="mobile" data-title="Compagnon voyage" data-description="Itinéraires optimisés, hors‑ligne, recommandations locales." data-image="">
-						<div class="thumb t6" aria-hidden="true"></div>
-						<div class="project-meta">
-							<span class="tag">Mobile</span>
-							<h3>Compagnon voyage</h3>
-							<p>Itinéraires et offline</p>
-						</div>
-					</article>
-
-					<article class="project-card" data-category="data" data-title="Détection d'anomalies" data-description="Surveillance temps réel, alertes et investigation." data-image="">
-						<div class="thumb t7" aria-hidden="true"></div>
-						<div class="project-meta">
-							<span class="tag">Data</span>
-							<h3>Détection d'anomalies</h3>
-							<p>Temps réel et alertes</p>
-						</div>
-					</article>
-
-					<article class="project-card" data-category="design" data-title="Identité visuelle" data-description="Logo, palette, typographies et motion guidelines." data-image="">
-						<div class="thumb t8" aria-hidden="true"></div>
-						<div class="project-meta">
-							<span class="tag">Design</span>
-							<h3>Identité visuelle</h3>
-							<p>Branding et motion</p>
-						</div>
-					</article>
-				</div>
-			</div>
-		</section>
-
-		<section id="competences" class="section skills" aria-label="Compétences & Technologies" data-reveal>
-			<div class="container">
-				<header class="section-head">
-					<h2>Compétences & Tech</h2>
-					<p>Un stack moderne pour livrer vite, propre, et qui scale.</p>
-				</header>
-				<ul class="chip-list" aria-label="Technologies">
-					<li class="chip">HTML5</li>
-					<li class="chip">CSS3</li>
-					<li class="chip">JavaScript</li>
-					<li class="chip">Figma</li>
-					<li class="chip">Node.js</li>
-					<li class="chip">Python</li>
-					<li class="chip">SQL</li>
-					<li class="chip">Git & CI</li>
-				</ul>
-			</div>
-		</section>
-
-		<section id="contact" class="section contact" aria-label="Nous contacter" data-reveal>
-			<div class="container">
-				<header class="section-head">
-					<h2>Contact</h2>
-					<p>Envie de collaborer ou d'en savoir plus ? Écrivez‑nous.</p>
-				</header>
-				<form id="contactForm" class="contact-form" novalidate>
-					<div class="form-grid">
-						<label>
-							<span>Nom complet</span>
-							<input type="text" name="name" placeholder="Votre nom" required />
-						</label>
-						<label>
-							<span>Email</span>
-							<input type="email" name="email" placeholder="vous@exemple.com" required />
-						</label>
-						<label class="full">
-							<span>Message</span>
-							<textarea name="message" rows="5" placeholder="Bonjour…" required></textarea>
-						</label>
-					</div>
-					<div class="form-actions">
-						<button type="submit" class="btn btn-primary">Envoyer</button>
-						<p class="form-note">Nous répondons sous 48h.</p>
-					</div>
-				</form>
-			</div>
-		</section>
-	</main>
-
-	<footer class="site-footer">
-		<div class="container footer-inner">
-			<p>© <span id="year"></span> Web Innovation — Tous droits réservés</p>
-			<ul class="footer-links">
-				<li><a href="#equipe">Équipe</a></li>
-				<li><a href="#projets">Projets</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</div>
-	</footer>
-
+			</section>
+		</main>
+	</div>
 	<div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modalTitle">
 		<div class="modal-backdrop" data-close></div>
 		<div class="modal-dialog" role="document">
@@ -280,9 +83,7 @@
 			</div>
 		</div>
 	</div>
-
 	<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
-
 	<script src="./script.js" defer></script>
 </body>
 </html>

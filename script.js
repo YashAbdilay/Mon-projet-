@@ -81,7 +81,9 @@
 		'equipe.html': 'equipe',
 		'projets.html': 'projets',
 		'competences.html': 'competences',
-		'contact.html': 'contact'
+		'contact.html': 'contact',
+		'login.html': 'login',
+		'register.html': 'register'
 	};
 	const current = (location.pathname.split('/').pop() || '').toLowerCase();
 	const activeKey = navMap[current] || 'home';
@@ -201,6 +203,40 @@
 		}
 		showToast('Message envoyé ! Merci.');
 		form.reset();
+	});
+
+	// Auth: login form
+	const loginForm = document.getElementById('loginForm');
+	loginForm?.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const data = new FormData(loginForm);
+		const email = String(data.get('email') || '').trim();
+		const password = String(data.get('password') || '');
+		const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+		if (!emailOk || password.length < 6) {
+			showToast('Vérifiez email et mot de passe.');
+			return;
+		}
+		showToast('Connexion réussie (démo).');
+		setTimeout(() => { location.href = 'index.html'; }, 800);
+	});
+
+	// Auth: registration form
+	const registerForm = document.getElementById('registerForm');
+	registerForm?.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const data = new FormData(registerForm);
+		const name = String(data.get('name') || '').trim();
+		const email = String(data.get('email') || '').trim();
+		const password = String(data.get('password') || '');
+		const confirm = String(data.get('password_confirmation') || '');
+		const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+		if (!name || !emailOk || password.length < 8 || password !== confirm) {
+			showToast('Veuillez remplir correctement le formulaire.');
+			return;
+		}
+		showToast('Compte créé (démo).');
+		setTimeout(() => { location.href = 'login.html'; }, 800);
 	});
 
 	// Reveal on scroll

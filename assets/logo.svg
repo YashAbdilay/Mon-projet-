@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="StayEasy logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b84ff"/>
+      <stop offset="100%" stop-color="#5d49ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <g fill="#fff">
+    <path d="M18 40c0-6.627 5.373-12 12-12h4c3.314 0 6-2.686 6-6s-2.686-6-6-6c-2.9 0-5.34 1.986-5.886 4.64-.204.998-1.167 1.64-2.165 1.436-.998-.204-1.64-1.167-1.436-2.165C25.39 15.88 29.384 13 34 13c5.523 0 10 4.477 10 10s-4.477 10-10 10h-4c-4.418 0-8 3.582-8 8 0 1.105-.895 2-2 2s-2-.895-2-2Z"/>
+    <circle cx="46" cy="44" r="4"/>
+  </g>
+</svg>
